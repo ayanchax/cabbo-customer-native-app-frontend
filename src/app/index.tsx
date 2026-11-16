@@ -1,22 +1,10 @@
-import { StyleSheet, Text } from "react-native";
+import { Text } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Index() {
   return (
-    <SafeAreaView style={styles.container}>
-      <Text style={styles.title}>Cabbo Man</Text>
+    <SafeAreaView className="flex-1 items-center justify-center bg-white">
+      <Text className="text-[32px] font-semibold text-secondary">Cabbo Man</Text>
     </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  title: {
-    fontSize: 32,
-    fontWeight: "600",
-  },
-});
