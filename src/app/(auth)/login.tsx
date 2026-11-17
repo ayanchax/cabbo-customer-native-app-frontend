@@ -1,1 +1,1 @@
-export { default } from "@/features/auth/PhoneScreen";
+export { PhoneScreen as default } from "@/features/auth/PhoneScreen";

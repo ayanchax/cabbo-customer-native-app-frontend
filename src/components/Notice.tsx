@@ -1,4 +1,5 @@
-import { Text, View } from "react-native";
+import { Text } from "@/components/Typography";
+import { View } from "react-native";
 
 export function Notice({ message, error = false }: { message: string; error?: boolean }) {
   return <View className={`flex-row gap-3 rounded-2xl p-4 ${error ? "bg-red-50" : "bg-blue-50"}`}>

@@ -1,9 +1,10 @@
-import { Button } from "@/components/Button";
-import { Notice } from "@/components/Notice";
-import { AuthShell, Heading } from "@/features/auth/components/AuthShell";
+import { Text } from "@/components/Typography";
+import { Button, Heading, Notice } from "@/components";
+import { AuthShell } from "@/features/auth/components";
 import { scenarioMessages, useAuthPreview } from "@/features/auth/preview";
 import { router } from "expo-router";
-import { ActivityIndicator, Text, View } from "react-native";
+import { APP } from "@/utils/constants";
+import { ActivityIndicator, View } from "react-native";
 
 export function CompleteScreen() {
   const { name, returning, reset } = useAuthPreview();
@@ -59,10 +60,10 @@ export function BootstrapScreen() {
     >
       <View className="flex-1 items-center justify-center gap-6 py-20">
         <Text className="text-5xl font-bold tracking-tighter text-primary">
-          cabbo<Text className="text-accent">.</Text>
+          {APP.name.toLowerCase()}<Text className="text-accent">.</Text>
         </Text>
         <Text className="text-base text-slate-500">
-          A good ride starts here.
+          {APP.copy.bootstrapSubtitle}
         </Text>
         {error ? (
           <Notice error message={error} />
@@ -100,7 +101,7 @@ export function SessionExpiredScreen() {
         <Heading
           eyebrow="LET'S RECONNECT"
           title={"Sign in to\nkeep going."}
-          description="Your session has expired. Verify your mobile number again to continue with Cabbo."
+          description={APP.copy.sessionExpiredDescription}
         />
       </View>
     </AuthShell>
