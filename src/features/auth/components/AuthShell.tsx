@@ -1,3 +1,4 @@
+import { AppLogo } from "@/components/AppLogo";
 import { Text } from "@/components/Typography";
 import { previewStates, useAuthPreview } from "@/features/auth/preview";
 import { APP } from "@/utils/constants";
@@ -29,13 +30,7 @@ export function AuthShell({
                 <Text className="text-2xl text-secondary">←</Text>
               </Pressable>
             ) : (
-              <Text
-                accessibilityLabel={APP.name}
-                className="text-3xl font-bold tracking-tighter text-primary"
-              >
-                {APP.name.toLowerCase()}
-                <Text className="text-accent">.</Text>
-              </Text>
+              <AppLogo />
             )}
             <View className="max-w-[65%] shrink rounded-full bg-blue-50 px-3 py-2">
               <Text className="text-xs font-semibold tracking-wider text-primary uppercase">

@@ -1,9 +1,9 @@
-import { Text, TextInput } from "@/components/Typography";
-import { Button, Heading, Notice } from "@/components";
+import { Button, Heading, Notice, Text, TextInput } from "@/components";
 import { AuthShell, RideArtwork } from "@/features/auth/components";
 import { scenarioMessages, useAuthPreview } from "@/features/auth/preview";
-import { router } from "expo-router";
+import { ICON_PROPERTIES } from "@/theme/properties";
 import { APP } from "@/utils/constants";
+import { router } from "expo-router";
 import { CarFront, Plane, Route } from "lucide-react-native";
 import { useState } from "react";
 import { Keyboard, View } from "react-native";
@@ -50,6 +50,9 @@ export function PhoneScreen() {
         eyebrow={APP.copy.welcome}
         title={APP.copy.signInTitle}
         description="Enter your mobile number to get started. We'll send you a verification code."
+        eyebrowProps={{
+          "aria-label": "Welcome",
+        }}
       />
       <View className="gap-3">
         <Text className="text-sm font-medium text-secondary">
@@ -77,8 +80,7 @@ export function PhoneScreen() {
             placeholder="Mobile number"
             placeholderTextColor="#64748B"
             keyboardType="phone-pad"
-            autoComplete="tel-national"
-            textContentType="telephoneNumber"
+            autoComplete="tel"
             returnKeyType="done"
             onSubmitEditing={next}
             selectionColor="#0B5FFF"
@@ -106,7 +108,7 @@ export function PhoneScreen() {
         <View className="flex-row items-center gap-2">
           <Plane
             size={16}
-            color="#64748B"
+            color={ICON_PROPERTIES.secondaryColor}
             strokeWidth={1.75}
             accessible={false}
           />
@@ -117,7 +119,7 @@ export function PhoneScreen() {
         <View className="flex-row items-center gap-2">
           <CarFront
             size={16}
-            color="#64748B"
+            color={ICON_PROPERTIES.secondaryColor}
             strokeWidth={1.75}
             accessible={false}
           />
@@ -128,7 +130,7 @@ export function PhoneScreen() {
         <View className="flex-row items-center gap-2">
           <Route
             size={16}
-            color="#64748B"
+            color={ICON_PROPERTIES.secondaryColor}
             strokeWidth={1.75}
             accessible={false}
           />

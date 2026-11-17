@@ -1,6 +1,7 @@
 import "@/global.css";
 import { QueryProvider } from "@/services/QueryProvider";
 import { FONT_ASSETS } from "@/theme/typography";
+import { APP } from "@/utils/constants";
 import { useFonts } from "expo-font";
 import { Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
@@ -23,7 +24,17 @@ function AppReady({ onRetry }: { onRetry: () => void }) {
   const [fontsLoaded, fontError] = useFonts(FONT_ASSETS);
 
   useEffect(() => {
-    if (fontsLoaded || fontError) void SplashScreen.hideAsync();
+    if (!fontsLoaded && !fontError) return;
+
+    // TEMPORARY: keep the splash visible for visual inspection in development.
+    const timer = setTimeout(
+      () => {
+        void SplashScreen.hideAsync();
+      },
+      __DEV__ ? 3000 : 0,
+    );
+
+    return () => clearTimeout(timer);
   }, [fontsLoaded, fontError]);
 
   if (fontError) {
@@ -34,17 +45,19 @@ function AppReady({ onRetry }: { onRetry: () => void }) {
           accessibilityRole="header"
           className="text-2xl font-bold text-secondary"
         >
-          We couldn’t get things ready.
+          {APP.copy.startupErrorTitle}
         </Text>
         <Text className="text-base text-slate-600">
-          Please try loading the app again.
+          {APP.copy.startupErrorDescription}
         </Text>
         <Pressable
           accessibilityRole="button"
           onPress={onRetry}
           className="min-h-14 items-center justify-center rounded-2xl bg-primary px-5 py-4"
         >
-          <Text className="text-base font-semibold text-white">Try again</Text>
+          <Text className="text-base font-semibold text-white">
+            {APP.copy.tryAgain}
+          </Text>
         </Pressable>
       </View>
     );
@@ -54,7 +67,7 @@ function AppReady({ onRetry }: { onRetry: () => void }) {
   if (!fontsLoaded) return null;
   // ------------END FONT READINESS CHECK------------
 
-  // Other readiness checks can be added here, e.g. network connectivity, user session, etc.
+  // Other readiness checks can be added here, e.g. network connectivity, user session, loading geolocation data etc.
 
   return (
     <QueryProvider>

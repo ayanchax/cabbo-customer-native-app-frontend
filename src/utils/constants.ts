@@ -6,7 +6,10 @@ export const APP = {
     tagline: "Your ride, simplified",
     
     copy: {
-        welcome: `Welcome to ${APP_NAME}`,
+        startupErrorTitle: "We couldn’t get things ready.",
+        startupErrorDescription: "Please try loading the app again.",
+        tryAgain: "Try again",
+        welcome: "Let's get you there",
         signInTitle: "Your next ride,\none step away.",
         signInFooter: "An airport run, a day out, or a longer escape.\nYour next ride starts here.",
         rideArtworkCaption: "A little planning. A great ride.",

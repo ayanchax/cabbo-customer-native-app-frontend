@@ -9,7 +9,4 @@ export const FONT_ASSETS = {
   GeistMono: require("@/assets/fonts/GeistMono-Regular.otf"),
 };
 
-export const TEXT_INPUT_PROPERTIES={
-  placeholderTextColor:"#64748B",
-  selectionColor:"#0B5FFF",
-} as const;
+

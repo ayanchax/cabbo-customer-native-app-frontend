@@ -1,5 +1,5 @@
 import { Text, TextInput } from "@/components/Typography";
-import { TEXT_INPUT_PROPERTIES } from "@/theme/typography";
+import { TEXT_INPUT_PROPERTIES } from "@/theme/properties";
 import { useState, type ComponentRef, type Ref } from "react";
 import { View, type TextInputProps } from "react-native";
 type Props = TextInputProps & {

@@ -10,7 +10,7 @@
     "android": {
       "adaptiveIcon": {
         "backgroundColor": "#FFFFFF",
-        "foregroundImage": "./assets/images/cabbo-adaptive-foreground.png"
+        "foregroundImage": "./assets/images/cabbo-app-icon.png"
       },
       "predictiveBackGestureEnabled": false
     },
