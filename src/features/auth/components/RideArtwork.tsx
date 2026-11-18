@@ -4,7 +4,7 @@ import { APP } from "@/utils/constants";
 
 // Decorative route illustration; represents no actual route or live position.
 export function RideArtwork() {
-  return <View accessible={false} importantForAccessibility="no-hide-descendants" className="mb-8 h-40 overflow-hidden rounded-3xl bg-blue-50">
+  return <View accessible={false} importantForAccessibility="no-hide-descendants" className="mb-6 h-40 overflow-hidden rounded-3xl bg-blue-50">
     <View className="absolute -left-4 top-10 h-4 w-96 -rotate-12 bg-white" />
     <View className="absolute left-14 -top-8 h-64 w-4 rotate-12 bg-white" />
     <View className="absolute right-14 -top-8 h-64 w-6 -rotate-12 bg-white" />

@@ -24,7 +24,7 @@
         "expo-splash-screen",
         {
           "backgroundColor": "#FFFFFF",
-          "image": "./assets/images/cabbo-logo.png",
+          "image": "./assets/images/cabbo-app-icon.png",
           "imageWidth": 200
         }
       ]

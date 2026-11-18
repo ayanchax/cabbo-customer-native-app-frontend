@@ -1,0 +1,1 @@
+export { RideTypesStrip } from "./RideTypesStrip";

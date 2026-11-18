@@ -1,0 +1,1 @@
+export { LegalAgreementStatement } from './LegalAgreementStatement';
