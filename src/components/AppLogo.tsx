@@ -21,7 +21,7 @@ export function AppLogo({
 }: AppLogoProps = {}) {
   if (imageSource) {
     // App logo is an image, so we render it as an Image component. We use the accessibilityLabel prop for screen readers.
-    // Since its a logo, the resizeMode is always set to contain, and the height and width are set to 10 and 24 respectively. The imageClassName prop can be used to add additional classes to the image.
+    // Since its a logo, the resizeMode is always set to contain, and the height and width are set to 14 and 28 respectively. The imageClassName prop can be used to add additional classes to the image.
     return (
       <Image
         source={imageSource}
@@ -29,7 +29,7 @@ export function AppLogo({
         accessibilityLabel={accessibilityLabel}
         accessibilityRole="image"
         resizeMode="contain"
-        className={`h-10 w-24 ${imageClassName}`}
+        className={`h-14 w-28 ${imageClassName}`}
       />
     );
   }
